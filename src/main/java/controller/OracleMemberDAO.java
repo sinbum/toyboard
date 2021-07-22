@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class OracleMemberDAO implements MemberDAO{
-	
+	//아 이렇게하니까 잘되는구나.
 	@Autowired
 	DriverManagerDataSource ds; //Connection
 

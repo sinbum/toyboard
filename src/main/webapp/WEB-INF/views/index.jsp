@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,11 +35,11 @@
 </head>
 <body>
     <header>
-        <div class="headerline"><h1>Memo Board for toyproject</h1></div>
+        <div class="headerline"><h1><a href="/index">Memo Board for toyproject</a></h1></div>
     </header>
     <nav>
         <div class="nav">
-            <span><input type="button" value="메모생성"></span>
+            <span><input type="button" value="메모생성" onclick="location.href='/memo/input'"></span>
             <span><input type="button" value="수정"></span>
             <span><input type="button" value="삭제"></span>
         </div>
@@ -46,20 +48,16 @@
         <aside>
             <div class="aside">
             <!--c태그라이브러리사용  -->
-            
-                <div>리스트1</div>
+            <c:forEach var="memo" items="${list}" varStatus="status">
+            	<div>${memo.name}</div>
+            </c:forEach>
                 
                                 
             </div>
         </aside>
+        
         <section>
-            <form action="">
-                <div class="section">                
-                    <div>제목 : <input type="text" name="" id="" class="contentname"></div><br>
-                    <div><input type="text" class="content"></div><br>
-                    <div><input type="submit" class="contentsave" value="저장" ></div>
-                </div>
-            </form>
+        <jsp:include page="/WEB-INF/views/section/${section}"></jsp:include>
         </section>
     </main>
 </body>

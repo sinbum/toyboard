@@ -18,16 +18,16 @@ public class MainController {
 	MemoService memoserivce;
 	
 public MainController() {
-	System.out.println("메인컨트롤러실행");
 }
 
 @RequestMapping("/index")
 public ModelAndView list() {
 	ModelAndView mv=new ModelAndView();
 	List<MemoVO> list= memoserivce.getList();
-	for(MemoVO m:list) {
-		System.out.println(m);
-	}
+	
+	
+	//섹션 이동경로는 현재 write로 되어있지만.index전용 section페이지 생성예정
+	mv.addObject("section","default.jsp");
 	mv.addObject("list",list);
 	mv.setViewName("/WEB-INF/views/index.jsp");
 	return mv;	

@@ -2,7 +2,6 @@ package controller;
 
 import java.util.List;
 
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +18,13 @@ public class MemoController {
 	MemoService memoserivce;
 
 	@RequestMapping("input")
-	public String input() {
-		return "/WEB-INF/views/input.jsp";
+	public ModelAndView input() {
+		ModelAndView mv = new ModelAndView();
+		List<MemoVO> list= memoserivce.getList();
+		mv.addObject("list",list);
+		mv.addObject("section","write.jsp");
+		mv.setViewName("/WEB-INF/views/index.jsp");
+		return mv;
 	}
 	@RequestMapping("inputProc")
 	public ModelAndView inputProc(String id, String name, String content ) {
@@ -33,7 +37,6 @@ public class MemoController {
 	}
 	
 	@RequestMapping("list")
-	@Test//junit5 라이브러리 추가.
 	public ModelAndView list() {
 		ModelAndView mv=new ModelAndView();
 		List<MemoVO> list= memoserivce.getList();

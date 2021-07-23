@@ -1,11 +1,13 @@
-package mybatis;
+package vo;
 
-
+import java.sql.Date;
 
 public class MemoVO {
+	
 	int id;
 	String name;
 	String content;
+	Date date;
 	public int getId() {
 		return id;
 	}
@@ -24,16 +26,29 @@ public class MemoVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public MemoVO(int id, String name, String content) {
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	@Override
+	public String toString() {
+		return "MemoVO [id=" + id + ", name=" + name + ", content=" + content + ", date=" + date + "]";
+	}
+	public MemoVO(int id, String name, String content, Date date) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.content = content;
+		this.date = date;
 	}
 	
-	@Override
-	public String toString() {
-		return "memoVO [id=" + id + ", name=" + name + ", content=" + content + "]";
-	}
+	
+	
+
+	
+	
 	
 	
 }

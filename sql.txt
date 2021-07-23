@@ -12,8 +12,10 @@ insert into memoboard values(2,'테스트제목','테스트내용',sysdate);
 insert into memoboard values(3,'테스트제목','테스트내용',sysdate);
 insert into memoboard values(4,'테스트제목','테스트내용',sysdate);
 insert into memoboard values(5,'테스트제목','테스트내용',sysdate);
-insert into memoboard values(6,'테스트제목','테스트내용',sysdate);
+
 
 select * from memoboard;
 
 COMMIT;
+
+

@@ -45,8 +45,18 @@ public class MemoController {
 		}
 		mv.addObject("list",list);
 		mv.setViewName("/WEB-INF/views/list.jsp");
-		return mv;
-		
+		return mv;		
 	}
+	
+	@RequestMapping("select")
+	public ModelAndView select(String id) {
+		ModelAndView mv=new ModelAndView();
+		MemoVO select= memoserivce.select(id);
+		
+		mv.addObject("select",select);		
+		mv.setViewName("/WEB-INF/views/select.jsp");
+		return mv;		
+	}	
+	
 	
 }

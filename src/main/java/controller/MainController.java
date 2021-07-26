@@ -29,8 +29,23 @@ public ModelAndView list() {
 	mv.addObject("section","default.jsp");
 	mv.addObject("list",list);
 	mv.setViewName("/WEB-INF/views/index.jsp");
-	return mv;	
+	return mv;
 }
+
+
+
+@RequestMapping("/update")
+public ModelAndView update(String id) {
+	ModelAndView mv=new ModelAndView();
+	MemoVO select= memoserivce.select(id);	
+	//섹션 이동경로는 현재 write로 되어있지만.index전용 section페이지 생성예정
+	mv.addObject("section","update.jsp");
+	mv.addObject("select",select);
+	mv.setViewName("/WEB-INF/views/index.jsp");
+	return mv;
+}
+
+//select만들기.
 	
 	
 	

@@ -7,7 +7,7 @@ public class MemoVO {
 	int id;
 	String name;
 	String content;
-	Date date;
+	Date time;
 	public int getId() {
 		return id;
 	}
@@ -26,22 +26,23 @@ public class MemoVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getDate() {
-		return date;
+	
+	public Date getTime() {
+		return time;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setTime(Date time) {
+		this.time = time;
 	}
-	@Override
-	public String toString() {
-		return "MemoVO [id=" + id + ", name=" + name + ", content=" + content + ", date=" + date + "]";
-	}
-	public MemoVO(int id, String name, String content, Date date) {
+	public MemoVO(int id, String name, String content, Date time) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.content = content;
-		this.date = date;
+		this.time = time;
+	}
+	@Override
+	public String toString() {
+		return "MemoVO [id=" + id + ", name=" + name + ", content=" + content + ", time=" + time + "]";
 	}
 	
 	

@@ -9,5 +9,7 @@ public interface MemoDAO {
 	int insert(String id, String name,String content);
 
 	List<MemoVO> getlist();
+	
+	MemoVO select(String id);
 
 }

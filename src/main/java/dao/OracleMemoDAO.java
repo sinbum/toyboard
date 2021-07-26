@@ -58,6 +58,32 @@ public class OracleMemoDAO implements MemoDAO{
 		}
 		return null;
 	}
+
+	@Override
+	public MemoVO select(String id) {
+		String sql="select * from memoboard where id=?";
+		MemoVO mv=null;
+		try {
+			PreparedStatement pstmt=ds.getConnection().prepareStatement(sql);
+			pstmt.setInt(1, Integer.parseInt(id));
+			ResultSet rs = pstmt.executeQuery();
+			
+			
+			if(rs.next()) {
+				mv= new MemoVO(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getDate(4));				
+			}
+			System.out.println(mv.toString());
+			rs.close();
+			pstmt.close();
+			return mv;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+		
+	}
 	
 	
 }

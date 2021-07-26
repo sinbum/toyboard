@@ -10,7 +10,7 @@
 <form action="/member/inputProc" method="post">
 id:<input type="text" name="id"><br>
 name:<input type="text" name="name"><br>
-content:<input type="text" name="content"><br>
+content:<input type="text" name="content"><br>list.jsp
 <input type="submit" value="저장">
 </form>
 </body>

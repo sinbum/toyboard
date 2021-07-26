@@ -22,6 +22,12 @@ public class MemoService {
 		
 		return memodao.getlist();
 	}
+	
+	public MemoVO select(String id) {
+		return memodao.select(id);
+		
+	}
+	
 
 	
 

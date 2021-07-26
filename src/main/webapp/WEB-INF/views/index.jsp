@@ -40,7 +40,7 @@
     <nav>
         <div class="nav">
             <span><input type="button" value="메모생성" onclick="location.href='/memo/input'"></span>
-            <span><input type="button" value="수정"></span>
+            <span><input type="button" value="수정" onclick="location.href='/update?id=1'"></span>
             <span><input type="button" value="삭제"></span>
         </div>
     </nav>

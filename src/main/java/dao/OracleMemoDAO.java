@@ -36,7 +36,6 @@ public class OracleMemoDAO implements MemoDAO{
 		return 0;
 	}
 
-	@Override
 	public List<MemoVO> getlist() {
 		String sql="select * from memoboard";
 		try {

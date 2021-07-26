@@ -13,7 +13,7 @@
 id:<input type="text" name="id" value="${select.id}" readonly><br>
 time:<input type="text" name="id" value="${select.time}" readonly><br>
 name:<input type="text" name="name" value="${select.name}" readonly><br>
-content:<input type="text" name="content" value="${select.content}" readonly><br>
+content:<textarea>"${select.contet}"</textarea>
 <h1>select.jsp</h1>
 <input type="submit" value="저장">
 </form>

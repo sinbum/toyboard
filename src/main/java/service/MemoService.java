@@ -27,6 +27,10 @@ public class MemoService {
 		return memodao.select(id);
 		
 	}
+
+	public int update(String id, String name, String content) {
+		return memodao.update(id,name,content);
+	}
 	
 
 	

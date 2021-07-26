@@ -84,6 +84,26 @@ public class OracleMemoDAO implements MemoDAO{
 		
 		
 	}
+
+	@Override
+	public int update(String id, String name, String content) {
+		String sql="update memoboard set name=?,content=? where id=?";
+		try {
+			PreparedStatement pstmt = ds.getConnection().prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, content);
+			pstmt.setInt(3,Integer.parseInt(id));
+			
+			int result=pstmt.executeUpdate();
+			pstmt.close();
+			return result;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+		
+	}
 	
 	
 }

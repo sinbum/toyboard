@@ -12,4 +12,6 @@ public interface MemoDAO {
 	
 	MemoVO select(String id);
 
+	int update(String id, String name, String content);
+
 }

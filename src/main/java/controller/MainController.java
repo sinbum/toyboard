@@ -45,6 +45,21 @@ public ModelAndView update(String id) {
 	mv.setViewName("/WEB-INF/views/index.jsp");
 	return mv;
 }
+@RequestMapping("/updateProc")
+public ModelAndView updateProc(String id,String name,String content) {
+	System.out.println("updateporc을 실행합니다 : "+id+name+content);
+	ModelAndView mv=new ModelAndView();
+	int result = memoserivce.update(id,name,content);	
+	//섹션 이동경로는 현재 write로 되어있지만.index전용 section페이지 생성예정
+	List<MemoVO> list= memoserivce.getList();
+	MemoVO select= memoserivce.select(id);
+	mv.addObject("select",select);
+	mv.addObject("list",list);
+	mv.addObject("section","updateProc.jsp");
+	mv.addObject("result",result);
+	mv.setViewName("/WEB-INF/views/index.jsp");
+	return mv;
+}
 
 //select만들기.
 @RequestMapping("/select")

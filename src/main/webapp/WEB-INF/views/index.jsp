@@ -9,9 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script>          
+		   		function update(){
+		   			var id=document.getElementById('id').value;
+		   			location.href='/update?id='+id;
+		   		}
+		   		
+		   		function select(id){
+		   			location.href='/select?id='+id;                	                	               	 
+                }
     </script>
 
     <style>
@@ -40,19 +47,21 @@
     <nav>
         <div class="nav">
             <span><input type="button" value="메모생성" onclick="location.href='/memo/input'"></span>
-            <span><input type="button" value="수정" onclick="location.href='/update?id=1'"></span>
+            <span><input type="button" value="수정" onclick="update(this)" id="updateButton"></span>
             <span><input type="button" value="삭제"></span>
         </div>
+       
     </nav>
     <main>
         <aside>
             <div class="aside">
             <!--c태그라이브러리사용  -->
             <c:forEach var="memo" items="${list}" varStatus="status">
-            	<div>${memo.name}</div>
-            </c:forEach>
+            	<div id="memoname" onclick="select(${memo.id})">${memo.name}</div>
+            </c:forEach>               
                 
-                                
+             
+                
             </div>
         </aside>
         

@@ -17,9 +17,9 @@
 
 <form action="updateProc" method="post">
   <div class="section">    	
-		<input type="text" value="${select.id}" hidden="">    
-        <div>제목 :<input type="text" name="" id="" class="contentname" value="${select.name}" readonly></div><br>
-        <div>작성일 :<input type="text" value="${select.time}" readonly></div><br>
+		<input type="text" value="${select.idx}" hidden="">    
+        <div>제목 :<input type="text" name="title" id="" class="contentname" value="${select.title}" readonly></div><br>
+        <div>작성일 :<input type="text" name="content" value="${select.date}" readonly></div><br>
         <div><textarea rows="10" cols="100" readonly>${select.content}</textarea></div><br>
         <div><input type="submit" class="contentsave" value="저장"></div>                      
     </div>

@@ -4,21 +4,22 @@ import java.sql.Date;
 
 public class MemoVO {
 	
-	int id;
-	String name;
+	int idx;
+	String title;
 	String content;
-	Date time;
-	public int getId() {
-		return id;
+	Date date;
+	
+	public int getIdx() {
+		return idx;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getContent() {
 		return content;
@@ -26,30 +27,24 @@ public class MemoVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
-	public Date getTime() {
-		return time;
+	public Date getDate() {
+		return date;
 	}
-	public void setTime(Date time) {
-		this.time = time;
-	}
-	public MemoVO(int id, String name, String content, Date time) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.content = content;
-		this.time = time;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	@Override
 	public String toString() {
-		return "MemoVO [id=" + id + ", name=" + name + ", content=" + content + ", time=" + time + "]";
+		return "MemoVO [idx=" + idx + ", title=" + title + ", content=" + content + ", date=" + date + "]";
+	}
+	public MemoVO(int idx, String title, String content, Date date) {
+		this.idx = idx;
+		this.title = title;
+		this.content = content;
+		this.date = date;
 	}
 	
 	
-	
-
-	
-	
-	
+		
 	
 }

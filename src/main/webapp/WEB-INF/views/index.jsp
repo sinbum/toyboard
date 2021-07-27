@@ -12,17 +12,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>          
 		   		function update(){
-		   			var id=document.getElementById('id').value;
-		   			location.href='/update?id='+id;
+		   		var id=document.getElementById('id').value;
+		   			location.href='/update?idx='+id;
 		   		}
 		   		
 		   		function select(id){
-		   			location.href='/select?id='+id;                	                	               	 
+		   			location.href='/selectId?idx='+id;                	                	               	 
                 }
+		   		
+		   		function deleteId(idx){
+		   			var idx=document.getElementById('idx').value;
+		   			location.href='/delete?idx='+idx;
+		   		}
     </script>
 
     <style>
-        body{width: 100%}
+        body{width: 100%;}
         main{display: flex; width: 100%;}
         nav{height: 60px;}
         aside{width: 30%;}        
@@ -46,22 +51,29 @@
     </header>
     <nav>
         <div class="nav">
-            <span><input type="button" value="메모생성" onclick="location.href='/memo/input'"></span>
+            <span><input type="button" value="메모생성" onclick="location.href='/input'"></span>
             <span><input type="button" value="수정" onclick="update(this)" id="updateButton"></span>
-            <span><input type="button" value="삭제"></span>
+            <span><input type="button" value="삭제" onclick="deleteId(this)" id="deleteButton"></span>
         </div>
        
     </nav>
     <main>
         <aside>
+        	<div class="aside_search">
+        	<form action="search">
+        		<select name="fieldname">
+        		<option>title</option>
+        		<option>content</option>
+        		</select>
+        		<input type="text" name="search" width="100px" placeholder="검색어를입력해주세요">
+        		<input type="submit" value="검색">
+        	</form >
+        	</div>
             <div class="aside">
-            <!--c태그라이브러리사용  -->
+                        <!--c태그라이브러리사용  -->
             <c:forEach var="memo" items="${list}" varStatus="status">
-            	<div id="memoname" onclick="select(${memo.id})">${memo.name}</div>
-            </c:forEach>               
-                
-             
-                
+            	<div id="memoname" onclick="select(${memo.idx})">${memo.title}</div>
+            </c:forEach>
             </div>
         </aside>
         

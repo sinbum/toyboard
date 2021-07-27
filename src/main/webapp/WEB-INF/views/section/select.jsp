@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
     
     <div class="section">    	
-		<input type="text" name="id" id="id" value="${select.id}" hidden="">    
-        <div>제목 :<input type="text" name="" id="" class="contentname" value="${select.name}"readonly></div><br>
-        <div>작성일 :<input type="text" value="${select.time}" readonly></div><br>
+		<input type="text" name="id" id="idx" value="${select.idx}" hidden="">    
+        <div>제목 :<input type="text" name="" id="" class="contentname" value="${select.title}"readonly></div><br>
+        <div>작성일 :<input type="text" value="${select.date}" readonly></div><br>
         <div><textarea rows="10" cols="100" readonly>${select.content}</textarea></div><br>
         
         

@@ -13,24 +13,34 @@ public class MemoService {
 	@Autowired
 	MemoDAO memodao;
 	
-	public int insert(String id, String name,String conetent) {
-		return memodao.insert(id,name,conetent);
+	public int insert(String name,String conetent) {
+		return memodao.insert(name, conetent);
 		
 	}
 
 	public List<MemoVO> getList() {
 		
-		return memodao.getlist();
+		return memodao.getList();
 	}
 	
-	public MemoVO select(String id) {
-		return memodao.select(id);
+	public MemoVO select(String idx) {
+		return memodao.select(idx);
 		
 	}
 
-	public int update(String id, String name, String content) {
-		return memodao.update(id,name,content);
+	public int update(String idx, String title, String content) {
+		return memodao.update(idx, title, content);
 	}
+	
+	public int delete(String idx) {
+		return memodao.delete(idx);
+	}
+	
+	public List<MemoVO> searchList(String fieldname,String search) {
+		return memodao.searchList(fieldname, search);
+	}
+
+	
 	
 
 	

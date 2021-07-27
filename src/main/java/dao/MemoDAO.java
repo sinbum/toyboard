@@ -6,12 +6,16 @@ import vo.MemoVO;
 
 public interface MemoDAO {
 
-	int insert(String id, String name,String content);
+	public int insert(String title,String content);
 
-	List<MemoVO> getlist();
+	public List<MemoVO> getList();
 	
-	MemoVO select(String id);
+	public MemoVO select(String idx);
 
-	int update(String id, String name, String content);
+	public int update(String idx, String title, String content);
+
+	public int delete(String idx);
+	
+	public List<MemoVO> searchList(String fieldname, String search);
 
 }

@@ -1,5 +1,8 @@
 # toyboard<br>
 
+프로젝트 작성자: sinbum<br>
+프로젝트 완료날짜: 2021-07-27(화)
+프로젝트 설명: 다음 아래의 내용.
 
 개발도구<br>
 Eclipse               latest version. <br>
